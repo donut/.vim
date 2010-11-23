@@ -28,8 +28,10 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 
 " Misc. 
-inoremap kj <Esc>  " Convenient way to get out of insert mode.
-nnoremap ; :       " make writing commands a bit faster
+inoremap kj <Esc>
+                   " Convenient way to get out of insert mode.
+nnoremap ; :
+                   " make writing commands a bit faster
 set scrolloff=5    " Minimal number of screen lines to keep above and below the cursor.
 set encoding=utf-8 " Use UTF8 encoding
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.DS_Store
