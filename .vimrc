@@ -143,37 +143,8 @@ set showmode
 filetype plugin indent on " indenting intelligence based on file type
 
 if has('autocmd')
-   augroup mkd
-      autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:>
-      autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:>
-   augroup END
+   " magic
 endif
-
-
-" FuzzyFinderTextMate. TextMate CMD+T like file & folder finding
-map <leader>t :FuzzyFinderTextMate<CR>
-let g:fuzzy_matching_limit=15
-	" Clear the cache before loading FuzzyFinder
-map <leader>T :ruby @finder = nil<CR>:FuzzyFinderTextMate<CR>
-
-" NERDTree
-let NERDTreeShowHidden=1
-let NERDTreeIgnore=['[\w ]*\.esproj$', '\.git$', '\.settings$', '\.buildpath$', '\.DS_Store$', '\.project$', '.*\.swp$', '.*\.swo$']
-map <leader>nt :NERDTreeToggle<CR>
-
-" Snippets
-let g:snips_author='Donovan Mueller'
-
-" Project Loading
-" command -bar ProjectMode :set lines=60|:set columns=115
-" command -bar LoadAdtecnet :ProjectMode|:NERDTree adtecnet|:cd ~/Dropbox/Sites/adtecnet
 
 " File Commands
 :command! -nargs=1 -range Spaces2Tabs <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g " From: http://vim.wikia.com/wiki/Super_retab
-
-
-"" LANGUAGES
-
-" Python
-let python_highlight_all = 1
-let python_slow_sync = 1
