@@ -65,7 +65,7 @@ set smartindent   " Automatically indent when adding a curly bracket, etc.
 " line wrapping
  "set nowrap             " don't wrap lines
 set linebreak           " soft wrap long lines
- "let &showbreak = '   ' " marker to show wrapped lines
+let &showbreak = '  ' " marker to show wrapped lines
 set backspace=indent,eol,start
                         " allow backspacing over everything in insert mode
 
@@ -96,7 +96,7 @@ map <C-l> <C-w>l
 
 " Making Things Pretty
 if &t_Co >= 256 || has("gui_running")
-	 colorscheme Zenburn
+	 colorscheme mayansmoke
 endif
 
 if &t_Co > 2 || has("gui_running")
@@ -104,6 +104,7 @@ if &t_Co > 2 || has("gui_running")
    syntax on
 endif
 
+set cursorline " highlight current line
 
 
 " Status line
@@ -148,3 +149,7 @@ endif
 
 " File Commands
 :command! -nargs=1 -range Spaces2Tabs <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g " From: http://vim.wikia.com/wiki/Super_retab
+
+" CommandT Plugin Settings
+let g:CommandTMatchWindowAtTop=1
+let g:CommandTCancelMap='kj'

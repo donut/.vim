@@ -50,6 +50,7 @@ amenu T&hemes.&Dark.Leo :colo leo<CR>
 amenu T&hemes.&Dark.Lucius :colo lucius<CR>
 amenu T&hemes.&Dark.Manxome :colo manxome<CR>
 amenu T&hemes.&Dark.Matrix :colo matrix<CR>
+amenu T&hemes.&Dark.Matrix :colo mayansmoke<CR>
 amenu T&hemes.&Dark.Metacosm :colo metacosm<CR>
 amenu T&hemes.&Dark.Moria :colo moria<CR>
 amenu T&hemes.&Dark.Motus :colo motus<CR>
