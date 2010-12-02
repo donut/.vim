@@ -63,9 +63,9 @@ set smartindent   " Automatically indent when adding a curly bracket, etc.
 
 
 " line wrapping
- "set nowrap             " don't wrap lines
-set linebreak           " soft wrap long lines
-let &showbreak = '  ' " marker to show wrapped lines
+set nowrap             " don't wrap lines
+ "set linebreak           " soft wrap long lines
+ "let &showbreak = '  ' " marker to show wrapped lines
 set backspace=indent,eol,start
                         " allow backspacing over everything in insert mode
 
@@ -119,8 +119,11 @@ set statusline+=0x%-8B                       " character value
 set statusline+=%-14(%l,%c%V%)               " line, character
 set statusline+=%<%P                         " file position
 
-" Show line number, cursor position.
-"set ruler
+
+" Editing
+nmap <D-M-l> ^v$h
+                  " select line contents
+
 
 " Display incomplete commands.
 set showcmd
