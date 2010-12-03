@@ -154,5 +154,7 @@ endif
 :command! -nargs=1 -range Spaces2Tabs <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g " From: http://vim.wikia.com/wiki/Super_retab
 
 " CommandT Plugin Settings
-let g:CommandTMatchWindowAtTop=1
-let g:CommandTCancelMap='kj'
+let g:CommandTMatchWindowAtTop=1    " Best match sticks to the top of window
+nmap <leader>T :CommandTFlush<CR> 
+                                    " Rescans the current directory structure
+let g:CommandTCancelMap='<C-x>'
