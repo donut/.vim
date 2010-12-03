@@ -63,11 +63,11 @@ set smartindent   " Automatically indent when adding a curly bracket, etc.
 
 
 " line wrapping
-set nowrap             " don't wrap lines
- "set linebreak           " soft wrap long lines
- "let &showbreak = '  ' " marker to show wrapped lines
+ "set nowrap        " don't wrap lines
+set linebreak       " soft wrap long lines
+let &showbreak='# ' " marker to show wrapped lines
 set backspace=indent,eol,start
-                        " allow backspacing over everything in insert mode
+                    " allow backspacing over everything in insert mode
 
 " Search
 set showmatch     " set show matching parenthesis
@@ -150,11 +150,11 @@ if has('autocmd')
    " magic
 endif
 
-" File Commands
-:command! -nargs=1 -range Spaces2Tabs <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g " From: http://vim.wikia.com/wiki/Super_retab
-
 " CommandT Plugin Settings
 let g:CommandTMatchWindowAtTop=1    " Best match sticks to the top of window
-nmap <leader>T :CommandTFlush<CR> 
+ " nmap <leader>T :CommandTFlush<CR> 
                                     " Rescans the current directory structure
 let g:CommandTCancelMap='<C-x>'
+
+" Sparkup
+let g:sparkupExecuteMapping='<C-,>'
