@@ -2,6 +2,7 @@
 " Maintainer: Donovan Muelle <zotobi@gmail.com>
 " Reference: Initially based on http://dev.gentoo.org/~ciaranm/docs/vim-guide/
 " with great help from http://nvie.com/posts/how-i-boosted-my-vim/
+" and http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 " License: www.opensource.org/licenses/bsd-license.php
 
 " Disable Vi compatibility mode
@@ -10,8 +11,15 @@ set nocompatible
 " Helps keep plugins organzied.
 " Each plugin has its own directory in
 " ~/.vim/bundles
-call pathogen#helptags()
+filetype off               " Force reloading plugins _after_ pathogen loads
+call pathogen#helptags()   " Add plugin docs as well
 call pathogen#runtime_append_all_bundles()
+filetype plugin indent on  " enable detection, plugins & indenting in one step
+
+" Disable possibly security exploit
+" modelines are basically comments in files that
+" help configure Vi(m). I don't use them.
+set modelines=0
 
 " change the mapleader from \ to ,
 "let mapleader=","
@@ -34,6 +42,7 @@ nnoremap ; :
                    " make writing commands a bit faster
 set scrolloff=5    " Minimal number of screen lines to keep above and below the cursor.
 set encoding=utf-8 " Use UTF8 encoding
+set wildmenu       " enable (WILD!!!) file tab completion
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.DS_Store
                    " files tab completion should ignore
 set title          " change the terminal's title
@@ -47,6 +56,7 @@ set pastetoggle=<F2>
                    " Toggle paste mode for large pasting
 cmap w!! w !sudo tee % >/dev/null
                    " Write a file requiring sudo permissions
+set showmatch     " set show matching parenthesis
 
 
 
@@ -68,9 +78,14 @@ set linebreak       " soft wrap long lines
 let &showbreak='# ' " marker to show wrapped lines
 set backspace=indent,eol,start
                     " allow backspacing over everything in insert mode
+set colorcolumn=80  " add a colored column
 
-" Search
-set showmatch     " set show matching parenthesis
+
+" --- SEARCH ---
+" These fix Vim's weird default regex when searching
+" regex should now behave more like Perl/Python
+nnoremap / /\v
+vnoremap / /\v
 set ignorecase    " ignore case when searching
 set smartcase     " ignore case if search pattern is all lowercase,
                   "    case-sensitive otherwise
@@ -94,9 +109,11 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 
-" Making Things Pretty
-if &t_Co >= 256 || has("gui_running")
-	 colorscheme mayansmoke
+" --- FOR THE EYES ---
+if has("gui_running")
+   colorscheme mayansmoke " liquidcarbon is a nice, dark theme
+elseif &t_Co >= 256
+   colorscheme mayansmoke
 endif
 
 if &t_Co > 2 || has("gui_running")
@@ -104,7 +121,8 @@ if &t_Co > 2 || has("gui_running")
    syntax on
 endif
 
-set cursorline " highlight current line
+set cursorline     " highlight current line
+set relativenumber " adds relative-to-current line numbering
 
 
 " Status line
@@ -137,24 +155,25 @@ nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>a
 
 
-" Show autocomplete menus.
-set wildmenu
 
 " Show editing mode
 set showmode
 
-" Filetype settings
-filetype plugin indent on " indenting intelligence based on file type
-
+" --- Filetype settings ---
 if has('autocmd')
    " magic
 endif
 
+
+" --- PLUGINS ---
 " CommandT Plugin Settings
-let g:CommandTMatchWindowAtTop=1    " Best match sticks to the top of window
- " nmap <leader>T :CommandTFlush<CR> 
-                                    " Rescans the current directory structure
+let g:CommandTMatchWindowAtTop=1 " Best match sticks to the top of window
+nmap <leader>t :CommandT<CR>
+                                 " Invoke CommandT
+nnoremap <leader>T :CommandTFlush<CR> 
+                                 " Rescans the current directory structure
 let g:CommandTCancelMap='<C-x>'
 
+
 " Sparkup
-let g:sparkupExecuteMapping='<C-,>'
+let g:sparkupExecuteMapping='<C-e>'

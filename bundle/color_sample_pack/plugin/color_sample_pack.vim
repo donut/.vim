@@ -47,6 +47,7 @@ amenu T&hemes.&Dark.Golden :colo golden<CR>
 amenu T&hemes.&Dark.Inkpot :colo inkpot<CR>
 amenu T&hemes.&Dark.Jellybeans :colo jellybeans<CR>
 amenu T&hemes.&Dark.Leo :colo leo<CR>
+amenu T&hemes.&Dark.LiquidCarbon :colo liquidcarbon<CR>
 amenu T&hemes.&Dark.Lucius :colo lucius<CR>
 amenu T&hemes.&Dark.Manxome :colo manxome<CR>
 amenu T&hemes.&Dark.Matrix :colo matrix<CR>
