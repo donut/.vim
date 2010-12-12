@@ -161,7 +161,7 @@ set showmode
 
 " --- Filetype settings ---
 if has('autocmd')
-   au BufRead,BufNewFile *.less setfiletype css
+   au BufRead,BufNewFile *.less setfiletype less
 endif
 
 
