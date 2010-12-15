@@ -61,11 +61,11 @@ set showmatch     " set show matching parenthesis
 
 
 " Tabs & indenting
-set tabstop=3     " A tab is X spaces
+set tabstop=4     " A tab is X spaces
 set expandtab     " Expand tabs into spaces
 set autoindent    " always set autoindenting on
 set copyindent    " copy the previous indentation on autoindenting
-set shiftwidth=3  " Number of spaces for auto-indenting
+set shiftwidth=4  " Number of spaces for auto-indenting
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 set smarttab      " insert tabs on the start of a line according to
                   "    shiftwidth, not tabstop
@@ -161,7 +161,7 @@ set showmode
 
 " --- Filetype settings ---
 if has('autocmd')
-   au BufRead,BufNewFile *.less setfiletype css
+   au BufRead,BufNewFile *.less setfiletype less
 endif
 
 
