@@ -84,8 +84,8 @@ set colorcolumn=80  " add a colored column
 " --- SEARCH ---
 " These fix Vim's weird default regex when searching
 " regex should now behave more like Perl/Python
-nnoremap / /\v
-vnoremap / /\v
+"nnoremap / /\v
+"vnoremap / /\v
 set ignorecase    " ignore case when searching
 set smartcase     " ignore case if search pattern is all lowercase,
                   "    case-sensitive otherwise
