@@ -11,7 +11,7 @@ if has('win32') || has('win64')
 	" http://jeffmilner.com/index.php/2005/07/30/windows-vista-fonts-now-available/
 	set guifont=Consolas:h12:cANSI
 elseif has("gui_macvim")
-   set guifont=Consolas:h12
+   set guifont=Monofur:h13
 elseif has('unix')
 	let &guifont="Monospace 10"
 endif
