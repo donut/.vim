@@ -69,7 +69,7 @@ set shiftwidth=3  " Number of spaces for auto-indenting
 set shiftround    " use multiple of shiftwidth when indenting with '<' and '>'
 set smarttab      " insert tabs on the start of a line according to
                   "    shiftwidth, not tabstop
-set smartindent   " Automatically indent when adding a curly bracket, etc.
+"set smartindent   " Automatically indent when adding a curly bracket, etc.
 
 
 " line wrapping
@@ -161,7 +161,7 @@ set showmode
 
 " --- Filetype settings ---
 if has('autocmd')
-   au BufRead,BufNewFile *.less setfiletype less
+   au BufRead,BufNewFile *.less set ft=less syntax=less
 endif
 
 
