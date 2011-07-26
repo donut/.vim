@@ -36,7 +36,7 @@ nmap <leader>sv :so $MYVIMRC<CR>
 
 
 " Misc. 
-inoremap kj <Esc>
+inoremap jj <Esc>
                    " Convenient way to get out of insert mode.
 nnoremap ; :
                    " make writing commands a bit faster
